@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#170d26">
+  <meta name="description" content="A little light, a lot of happiness. Celebrate Tihar with this interactive digital Deusi-Bhailo experience.">
+  <title>Digital Tihar • शुभ दीपावली</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Digital Tihar home"><span class="brand-mark">✦</span> DEUSI <span class="brand-light">/ BHAILO</span></a>
+    <div class="sound-status"><span class="sound-dot" id="soundDot"></span><span id="soundLabel">SOUND OFF</span></div>
+  </header>
+
+  <main>
+    <section class="screen active" id="welcome">
+      <div class="hero-ornament">✧ &nbsp; ✦ &nbsp; ✧</div>
+      <p class="eyebrow">A FESTIVAL OF LIGHT • LOVE • NEW BEGINNINGS</p>
+      <h1>शुभ दीपावली <span>२०८३</span></h1>
+      <p class="hero-title">A little light, <em>a lot of happiness.</em></p>
+      <p class="muted intro-copy">You're invited to a little digital celebration of Tihar.<br>Bring a wish. Leave with a little more light.</p>
+      <button class="primary-button" id="startBtn"><span>✦</span> LET'S CELEBRATE <span>→</span></button>
+      <p class="microcopy">BEST EXPERIENCED WITH SOUND ON</p>
+      <div class="welcome-lamps" aria-hidden="true"><span>🪔</span><span>🪔</span><span>🪔</span></div>
+    </section>
+
+    <section class="screen" id="diyaScreen">
+      <p class="eyebrow">CHAPTER 01 · LIGHT THE WAY</p>
+      <h2>It begins with <em>one little light.</em></h2>
+      <p class="muted">Tap the diya and let its warmth fill the night.</p>
+      <button class="diya-button" id="diyaBtn" aria-label="Light the diya">
+        <span class="flame" id="flame"></span><span class="wick"></span><span class="diya-bowl"><i></i></span>
+        <span class="diya-glow"></span>
+      </button>
+      <p class="hint" id="diyaHint">TAP THE DIYA TO LIGHT IT</p>
+      <button class="text-button hidden" id="toFireworks">The light is yours — continue →</button>
+    </section>
+
+    <section class="screen" id="fireworksScreen">
+      <p class="eyebrow">CHAPTER 02 · A SKY FULL OF JOY</p>
+      <h2>Let the celebration <em>sparkle.</em></h2>
+      <p class="muted">Tap below to send a little joy into the night.</p>
+      <div class="sky" id="sky" aria-label="Decorative animated sparkles"></div>
+      <button class="primary-button" id="sparkBtn">✧ MAKE SOME SPARKLE ✧</button>
+      <p class="hint" id="sparkCount">YOUR CELEBRATION STARTS HERE</p>
+      <button class="text-button" id="toWish">Share a wish with us →</button>
+    </section>
+
+    <section class="screen" id="wishScreen">
+      <p class="eyebrow">CHAPTER 03 · A WISH FOR THE YEAR AHEAD</p>
+      <h2>What is your <em>heart wishing for?</em></h2>
+      <p class="muted">Write a hope, a dream, or a kind thought. Keep it close.</p>
+      <form id="wishForm" class="wish-form">
+        <label for="wishName">YOUR NAME <span>(OPTIONAL)</span></label>
+        <input id="wishName" maxlength="35" placeholder="How should we address you?">
+        <label for="wishText">YOUR WISH</label>
+        <textarea id="wishText" maxlength="240" required placeholder="This Tihar, I wish for…"></textarea>
+        <button class="primary-button" type="submit">SEND MY WISH ✦</button>
+      </form>
+      <div class="wish-response hidden" id="wishResponse" aria-live="polite"></div>
+      <button class="text-button" id="toDakshina">Continue to the final blessing →</button>
+    </section>
+
+    <section class="screen" id="dakshinaScreen">
+      <p class="eyebrow">A SMALL GIFT · A BIG BLESSING</p>
+      <h2>Share the light, <em>if you wish.</em></h2>
+      <p class="muted">Your presence and good wishes are already a gift.<br>If you'd like to offer Dakshina, you can scan below.</p>
+      <div class="qr-frame">
+        <div class="qr-placeholder" id="qrPlaceholder">
+          <span class="qr-icon">▦</span>
+          <strong>YOUR QR GOES HERE</strong>
+          <small>Replace assets/dakshina-qr.png with your QR image</small>
+        </div>
+        <img id="qrImage" class="qr-image hidden" src="assets/dakshina-qr.png" alt="Dakshina payment QR code">
+      </div>
+      <p class="qr-caption">Scan with your supported payment app</p>
+      <p class="gentle-note">Only if you wish. No pressure — your blessings mean the most. ♡</p>
+      <button class="primary-button" id="finishBtn">FINISH THE CELEBRATION ✦</button>
+    </section>
+
+    <section class="screen" id="finalScreen">
+      <div class="final-spark">✧ ✦ ✧</div>
+      <p class="eyebrow">UNTIL WE CELEBRATE AGAIN</p>
+      <h1>शुभ तिहार!</h1>
+      <h2 class="final-title">May your days <em>shine bright.</em></h2>
+      <p class="muted final-copy">May your home be filled with peace, your efforts lead to success, your heart find happiness, and every new beginning bring you closer to your dreams.</p>
+      <p class="devanagari">सुख, शान्ति, समृद्धि र सफलताको हार्दिक मंगलमय शुभकामना।</p>
+      <div class="final-lamps">🪔　✦　🪔　✦　🪔</div>
+      <button class="text-button" id="replayBtn">↻ Celebrate again</button>
+    </section>
+  </main>
+
+  <footer><span>MADE WITH LIGHT & GOOD WISHES</span><span>शुभ दीपावली · २०८३</span></footer>
+  <audio id="tiharAudio" src="assets/tihar-song.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
